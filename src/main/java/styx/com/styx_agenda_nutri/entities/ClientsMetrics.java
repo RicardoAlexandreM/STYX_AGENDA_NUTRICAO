@@ -12,11 +12,15 @@ public class ClientsMetrics {
     @JoinColumn(name = "idClients")
     @ManyToOne
     private Clients clients;
-    private double Weight;
-    private String WeightUnit;
-    private double Height;
-    private String HeightUnit;
-    private int Age;
+    private double weight;
+    private String weightUnit;
+    private double height;
+    private String heightUnit;
+    private int age;
+    private double calories;
+    private double protein;
+    private double carbohydrate;
+    private double fat;
 
     public ClientsMetrics() {
 
@@ -39,42 +43,74 @@ public class ClientsMetrics {
     }
 
     public double getWeight() {
-        return Weight;
+        return weight;
     }
 
     public void setWeight(double weight) {
-        Weight = weight;
+        this.weight = weight;
     }
 
     public String getWeightUnit() {
-        return WeightUnit;
+        return weightUnit;
     }
 
     public void setWeightUnit(String weightUnit) {
-        WeightUnit = weightUnit;
+        this.weightUnit = weightUnit;
     }
 
     public double getHeight() {
-        return Height;
+        return height;
     }
 
     public void setHeight(double height) {
-        Height = height;
+        this.height = height;
     }
 
     public String getHeightUnit() {
-        return HeightUnit;
+        return heightUnit;
     }
 
     public void setHeightUnit(String heightUnit) {
-        HeightUnit = heightUnit;
+        this.heightUnit = heightUnit;
     }
 
     public int getAge() {
-        return Age;
+        return age;
     }
 
     public void setAge(int age) {
-        Age = age;
+        this.age = age;
+    }
+
+    public double getCalories() {
+        return calories;
+    }
+
+    public void setCalories(double calories) {
+        this.calories = calories;
+    }
+
+    public double getProtein() {
+        return protein;
+    }
+
+    public void setProtein(double protein) {
+        this.protein = protein;
+    }
+
+    public double getCarbohydrate() {
+        return carbohydrate;
+    }
+
+    public void setCarbohydrate(double carbohydrate) {
+        this.carbohydrate = carbohydrate;
+    }
+
+    public double getFat() {
+        return fat;
+    }
+
+    public void setFat(double fat) {
+        this.fat = fat;
     }
 }
