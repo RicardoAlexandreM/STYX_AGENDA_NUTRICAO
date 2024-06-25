@@ -10,11 +10,22 @@ public class LogData {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "idLogData")
     private int idLogData;
+
+    @Column(name = "tabela")
     private String tabela;
+
+    @Column(name = "idTabela")
     private int idTabela;
+
+    @Column(name = "date")
     private Date date;
+
+    @Column(name = "origin")
     private String origin;
+
+    @Column(name = "destiny")
     private String destiny;
 
     public LogData() {

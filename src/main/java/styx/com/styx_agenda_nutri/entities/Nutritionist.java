@@ -8,12 +8,21 @@ public class Nutritionist {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "idNutritionist")
     private int idNutritionist;
 
+    @Column(name = "name")
     private String name;
+
+    @Column(name = "cpf")
     private String cpf;
+
+    @Column(name = "gender")
     private String gender;
+
+    @Column(name = "excluded")
     private String excluded;
+
     @JoinColumn(name = "idContactDetails")
     @OneToOne
     private ContactDetails contactDetails;

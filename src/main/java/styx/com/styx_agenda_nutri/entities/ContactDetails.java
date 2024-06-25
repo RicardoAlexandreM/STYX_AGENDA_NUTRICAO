@@ -8,9 +8,16 @@ public class ContactDetails {
 
      @Id
      @GeneratedValue(strategy = GenerationType.IDENTITY)
+     @Column(name = "idContactDetails")
      private int idContactDetails;
+
+     @Column(name = "type")
      private String type;
+
+     @Column(name = "contact")
      private String contact;
+
+     @Column(name = "additional")
      private String additional;
 
      public ContactDetails() {

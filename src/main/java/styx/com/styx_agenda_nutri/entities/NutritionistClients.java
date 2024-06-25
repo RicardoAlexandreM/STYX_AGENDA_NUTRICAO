@@ -8,10 +8,13 @@ public class NutritionistClients {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "idNutritionistClients")
     private int idNutritionistClients;
+
     @JoinColumn(name = "idNutritionist")
     @OneToOne
     private Nutritionist nutritionist;
+
     @JoinColumn(name = "idClients")
     @OneToOne
     private Clients clients;
