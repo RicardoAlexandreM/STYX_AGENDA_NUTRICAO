@@ -9,7 +9,7 @@ public class Nutritionist {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idNutritionist")
-    private int idNutritionist;
+    private Long idNutritionist;
 
     @Column(name = "name")
     private String name;
@@ -31,11 +31,11 @@ public class Nutritionist {
 
     }
 
-    public int getIdNutritionist() {
+    public Long getIdNutritionist() {
         return idNutritionist;
     }
 
-    public void setIdNutritionist(int idNutritionist) {
+    public void setIdNutritionist(Long idNutritionist) {
         this.idNutritionist = idNutritionist;
     }
 

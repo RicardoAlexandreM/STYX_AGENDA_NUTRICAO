@@ -11,7 +11,7 @@ public class LogData {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idLogData")
-    private int idLogData;
+    private Long idLogData;
 
     @Column(name = "tabela")
     private String tabela;
@@ -32,15 +32,11 @@ public class LogData {
 
     }
 
-    public LogData(int idLogData) {
-
-    }
-
-    public int getIdLogData() {
+    public Long getIdLogData() {
         return idLogData;
     }
 
-    public void setIdLogData(int idLogData) {
+    public void setIdLogData(Long idLogData) {
         this.idLogData = idLogData;
     }
 

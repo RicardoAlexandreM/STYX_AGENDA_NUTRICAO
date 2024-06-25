@@ -9,7 +9,7 @@ public class NutritionistClients {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idNutritionistClients")
-    private int idNutritionistClients;
+    private Long idNutritionistClients;
 
     @JoinColumn(name = "idNutritionist")
     @OneToOne
@@ -23,11 +23,11 @@ public class NutritionistClients {
 
     }
 
-    public int getIdNutritionistClients() {
+    public Long getIdNutritionistClients() {
         return idNutritionistClients;
     }
 
-    public void setIdNutritionistClients(int idNutritionistClients) {
+    public void setIdNutritionistClients(Long idNutritionistClients) {
         this.idNutritionistClients = idNutritionistClients;
     }
 

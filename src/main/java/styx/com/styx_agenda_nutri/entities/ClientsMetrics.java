@@ -9,7 +9,7 @@ public class ClientsMetrics {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idClientsMetrics")
-    private int idClientsMetrics;
+    private Long idClientsMetrics;
 
     @JoinColumn(name = "idClients")
     @ManyToOne
@@ -46,11 +46,11 @@ public class ClientsMetrics {
 
     }
 
-    public int getIdClientsMetrics() {
+    public Long getIdClientsMetrics() {
         return idClientsMetrics;
     }
 
-    public void setIdClientsMetrics(int idClientsMetrics) {
+    public void setIdClientsMetrics(Long idClientsMetrics) {
         this.idClientsMetrics = idClientsMetrics;
     }
 

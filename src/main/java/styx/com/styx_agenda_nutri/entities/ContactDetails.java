@@ -9,7 +9,7 @@ public class ContactDetails {
      @Id
      @GeneratedValue(strategy = GenerationType.IDENTITY)
      @Column(name = "idContactDetails")
-     private int idContactDetails;
+     private Long idContactDetails;
 
      @Column(name = "type")
      private String type;
@@ -24,11 +24,11 @@ public class ContactDetails {
 
      }
 
-    public int getIdContactDetails() {
+    public Long getIdContactDetails() {
         return idContactDetails;
     }
 
-    public void setIdContactDetails(int idContactDetails) {
+    public void setIdContactDetails(Long idContactDetails) {
         this.idContactDetails = idContactDetails;
     }
 
