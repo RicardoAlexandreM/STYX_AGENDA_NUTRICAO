@@ -7,6 +7,4 @@ import styx.com.styx_agenda_nutri.entities.Clients;
 @Repository
 public interface ClientsRepository extends JpaRepository<Clients, Long> {
 
-    Clients findByName(String name);
-
 }
