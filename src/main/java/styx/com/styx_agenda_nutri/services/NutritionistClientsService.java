@@ -9,7 +9,7 @@ import styx.com.styx_agenda_nutri.repositories.NutritionistClientsRrepository;
 import java.util.Optional;
 
 @Service
-public class NutritionidtClientsService {
+public class NutritionistClientsService {
 
     @Autowired
     private NutritionistClientsRrepository nutritionistClientsRrepository;
