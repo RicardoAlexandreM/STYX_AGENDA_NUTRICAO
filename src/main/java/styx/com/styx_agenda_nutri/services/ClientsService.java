@@ -3,7 +3,7 @@ package styx.com.styx_agenda_nutri.services;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import styx.com.styx_agenda_nutri.entities.Clients;
+import styx.com.styx_agenda_nutri.models.Clients;
 import styx.com.styx_agenda_nutri.repositories.ClientsRepository;
 
 import java.util.Optional;

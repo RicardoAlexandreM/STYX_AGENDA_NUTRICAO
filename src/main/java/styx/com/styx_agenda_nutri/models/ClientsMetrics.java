@@ -1,4 +1,4 @@
-package styx.com.styx_agenda_nutri.entities;
+package styx.com.styx_agenda_nutri.models;
 
 import jakarta.persistence.*;
 

@@ -2,7 +2,7 @@ package styx.com.styx_agenda_nutri.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import styx.com.styx_agenda_nutri.entities.ContactDetails;
+import styx.com.styx_agenda_nutri.models.ContactDetails;
 import styx.com.styx_agenda_nutri.repositories.ContactDetailsRepository;
 
 import java.util.Optional;
