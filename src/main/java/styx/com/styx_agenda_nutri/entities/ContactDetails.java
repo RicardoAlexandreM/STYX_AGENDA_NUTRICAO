@@ -8,16 +8,16 @@ public class ContactDetails {
 
      @Id
      @GeneratedValue(strategy = GenerationType.IDENTITY)
-     @Column(name = "idContactDetails")
+     @Column(name = "idContactDetails", unique = true, nullable = false)
      private Long idContactDetails;
 
-     @Column(name = "type")
+     @Column(name = "type", nullable = false, length = 50)
      private String type;
 
-     @Column(name = "contact")
+     @Column(name = "contact", nullable = false, length = 255)
      private String contact;
 
-     @Column(name = "additional")
+     @Column(name = "additional", length = 255)
      private String additional;
 
      public ContactDetails() {

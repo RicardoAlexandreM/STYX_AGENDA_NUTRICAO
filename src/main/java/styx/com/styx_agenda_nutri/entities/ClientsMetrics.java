@@ -8,38 +8,38 @@ public class ClientsMetrics {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idClientsMetrics")
+    @Column(name = "idClientsMetrics", unique = true, nullable = false)
     private Long idClientsMetrics;
 
     @JoinColumn(name = "idClients")
     @ManyToOne
     private Clients clients;
 
-    @Column(name = "weight")
+    @Column(name = "weight", nullable = false, precision = 2)
     private double weight;
 
-    @Column(name = "weightUnit")
+    @Column(name = "weightUnit", nullable = false)
     private String weightUnit;
 
-    @Column(name = "height")
+    @Column(name = "height", nullable = false, precision = 2)
     private double height;
 
-    @Column(name = "heightUnit")
+    @Column(name = "heightUnit", nullable = false)
     private String heightUnit;
 
-    @Column(name = "age")
+    @Column(name = "age", nullable = false)
     private int age;
 
-    @Column(name = "calories")
+    @Column(name = "calories", nullable = false, precision = 2)
     private double calories;
 
-    @Column(name = "protein")
+    @Column(name = "protein", nullable = false, precision = 2)
     private double protein;
 
-    @Column(name = "carbohydrate")
+    @Column(name = "carbohydrate", nullable = false, precision = 2)
     private double carbohydrate;
 
-    @Column(name = "fat")
+    @Column(name = "fat", nullable = false, precision = 2)
     private double fat;
 
     public ClientsMetrics() {

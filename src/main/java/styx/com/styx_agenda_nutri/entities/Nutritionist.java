@@ -8,19 +8,19 @@ public class Nutritionist {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idNutritionist")
+    @Column(name = "idNutritionist", unique = true, nullable = false)
     private Long idNutritionist;
 
-    @Column(name = "name")
+    @Column(name = "name", nullable = false, length = 100)
     private String name;
 
-    @Column(name = "cpf")
+    @Column(name = "cpf", nullable = false, length = 20)
     private String cpf;
 
-    @Column(name = "gender")
+    @Column(name = "gender", length = 10)
     private String gender;
 
-    @Column(name = "excluded")
+    @Column(name = "excluded", length = 1)// S - Sim or N - Não
     private String excluded;
 
     @JoinColumn(name = "idContactDetails")

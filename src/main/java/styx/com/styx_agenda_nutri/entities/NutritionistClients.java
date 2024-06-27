@@ -8,14 +8,14 @@ public class NutritionistClients {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idNutritionistClients")
+    @Column(name = "idNutritionistClients", unique = true, nullable = false)
     private Long idNutritionistClients;
 
-    @JoinColumn(name = "idNutritionist")
+    @JoinColumn(name = "idNutritionist", nullable = false)
     @OneToOne
     private Nutritionist nutritionist;
 
-    @JoinColumn(name = "idClients")
+    @JoinColumn(name = "idClients", nullable = false)
     @OneToOne
     private Clients clients;
 

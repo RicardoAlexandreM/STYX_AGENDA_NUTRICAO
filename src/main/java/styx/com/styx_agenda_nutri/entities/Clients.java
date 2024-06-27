@@ -10,26 +10,26 @@ public class Clients {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idClients")
+    @Column(name = "idClients", unique = true, nullable = false)
     private Long idClients;
 
-    @Column(name = "nome")
+    @Column(name = "nome", nullable = false, length = 100)
     private String nome;
 
-    @Column(name = "cpf")
+    @Column(name = "cpf", nullable = false, length = 20)
     private String cpf;
 
-    @JoinColumn(name = "idContactDetails")
+    @JoinColumn(name = "idContactDetails", nullable = false)
     @OneToOne
     private ContactDetails contactDetails;
 
     @Column(name = "dateOfRecord")
     private Date dateOfRecord;
 
-    @Column(name = "dateOfBirth")
+    @Column(name = "dateOfBirth", nullable = false)
     private Date dateOfBirth;
 
-    @Column(name = "situation")
+    @Column(name = "situation", nullable = false)
     private String situation;
 
     public Clients(){
