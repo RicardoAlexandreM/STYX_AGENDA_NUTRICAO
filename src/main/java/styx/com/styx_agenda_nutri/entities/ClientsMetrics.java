@@ -2,6 +2,8 @@ package styx.com.styx_agenda_nutri.entities;
 
 import jakarta.persistence.*;
 
+import java.util.Objects;
+
 @Entity
 @Table(name = "ClientsMetrics")
 public class ClientsMetrics {
@@ -44,6 +46,20 @@ public class ClientsMetrics {
 
     public ClientsMetrics() {
 
+    }
+
+    public ClientsMetrics(Long idClientsMetrics, Clients clients, double weight, String weightUnit, double height, String heightUnit, int age, double calories, double protein, double carbohydrate, double fat) {
+        this.idClientsMetrics = idClientsMetrics;
+        this.clients = clients;
+        this.weight = weight;
+        this.weightUnit = weightUnit;
+        this.height = height;
+        this.heightUnit = heightUnit;
+        this.age = age;
+        this.calories = calories;
+        this.protein = protein;
+        this.carbohydrate = carbohydrate;
+        this.fat = fat;
     }
 
     public Long getIdClientsMetrics() {
@@ -132,5 +148,18 @@ public class ClientsMetrics {
 
     public void setFat(double fat) {
         this.fat = fat;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ClientsMetrics that = (ClientsMetrics) o;
+        return Double.compare(weight, that.weight) == 0 && Double.compare(height, that.height) == 0 && age == that.age && Double.compare(calories, that.calories) == 0 && Double.compare(protein, that.protein) == 0 && Double.compare(carbohydrate, that.carbohydrate) == 0 && Double.compare(fat, that.fat) == 0 && Objects.equals(idClientsMetrics, that.idClientsMetrics) && Objects.equals(clients, that.clients) && Objects.equals(weightUnit, that.weightUnit) && Objects.equals(heightUnit, that.heightUnit);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(idClientsMetrics, clients, weight, weightUnit, height, heightUnit, age, calories, protein, carbohydrate, fat);
     }
 }

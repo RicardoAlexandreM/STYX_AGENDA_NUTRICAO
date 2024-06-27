@@ -3,6 +3,7 @@ package styx.com.styx_agenda_nutri.entities;
 import jakarta.persistence.*;
 
 import java.util.Date;
+import java.util.Objects;
 
 @Entity
 @Table(name = "LogData")
@@ -30,6 +31,15 @@ public class LogData {
 
     public LogData() {
 
+    }
+
+    public LogData(Long idLogData, String tabela, int idTabela, Date date, String origin, String destiny) {
+        this.idLogData = idLogData;
+        this.tabela = tabela;
+        this.idTabela = idTabela;
+        this.date = date;
+        this.origin = origin;
+        this.destiny = destiny;
     }
 
     public Long getIdLogData() {
@@ -78,5 +88,18 @@ public class LogData {
 
     public void setDestiny(String destiny) {
         this.destiny = destiny;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        LogData logData = (LogData) o;
+        return idTabela == logData.idTabela && Objects.equals(idLogData, logData.idLogData) && Objects.equals(tabela, logData.tabela) && Objects.equals(date, logData.date) && Objects.equals(origin, logData.origin) && Objects.equals(destiny, logData.destiny);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(idLogData, tabela, idTabela, date, origin, destiny);
     }
 }

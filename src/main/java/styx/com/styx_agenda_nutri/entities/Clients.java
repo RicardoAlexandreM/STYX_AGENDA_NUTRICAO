@@ -3,6 +3,7 @@ package styx.com.styx_agenda_nutri.entities;
 import jakarta.persistence.*;
 
 import java.util.Date;
+import java.util.Objects;
 
 @Entity
 @Table(name = "Clients")
@@ -34,6 +35,16 @@ public class Clients {
 
     public Clients(){
 
+    }
+
+    public Clients(Long idClients, String nome, String cpf, ContactDetails contactDetails, Date dateOfRecord, Date dateOfBirth, String situation) {
+        this.idClients = idClients;
+        this.nome = nome;
+        this.cpf = cpf;
+        this.contactDetails = contactDetails;
+        this.dateOfRecord = dateOfRecord;
+        this.dateOfBirth = dateOfBirth;
+        this.situation = situation;
     }
 
     public Long getIdClients() {
@@ -90,5 +101,18 @@ public class Clients {
 
     public void setSituation(String situation) {
         this.situation = situation;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Clients clients = (Clients) o;
+        return Objects.equals(idClients, clients.idClients) && Objects.equals(nome, clients.nome) && Objects.equals(cpf, clients.cpf) && Objects.equals(contactDetails, clients.contactDetails) && Objects.equals(dateOfRecord, clients.dateOfRecord) && Objects.equals(dateOfBirth, clients.dateOfBirth) && Objects.equals(situation, clients.situation);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(idClients, nome, cpf, contactDetails, dateOfRecord, dateOfBirth, situation);
     }
 }

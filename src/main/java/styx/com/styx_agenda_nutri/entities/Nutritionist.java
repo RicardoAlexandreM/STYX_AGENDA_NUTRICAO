@@ -2,6 +2,8 @@ package styx.com.styx_agenda_nutri.entities;
 
 import jakarta.persistence.*;
 
+import java.util.Objects;
+
 @Entity
 @Table(name = "Nutritionist")
 public class Nutritionist {
@@ -29,6 +31,15 @@ public class Nutritionist {
 
     public Nutritionist(){
 
+    }
+
+    public Nutritionist(Long idNutritionist, String name, String cpf, String gender, String excluded, ContactDetails contactDetails) {
+        this.idNutritionist = idNutritionist;
+        this.name = name;
+        this.cpf = cpf;
+        this.gender = gender;
+        this.excluded = excluded;
+        this.contactDetails = contactDetails;
     }
 
     public Long getIdNutritionist() {
@@ -77,5 +88,23 @@ public class Nutritionist {
 
     public void setContactDetails(ContactDetails contactDetails) {
         this.contactDetails = contactDetails;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Nutritionist that = (Nutritionist) o;
+        return Objects.equals(idNutritionist, that.idNutritionist) &&
+               Objects.equals(name, that.name) &&
+               Objects.equals(cpf, that.cpf) &&
+               Objects.equals(gender, that.gender) &&
+               Objects.equals(excluded, that.excluded) &&
+               Objects.equals(contactDetails, that.contactDetails);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(idNutritionist, name, cpf, gender, excluded, contactDetails);
     }
 }
